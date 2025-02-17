@@ -1,10 +1,11 @@
 import TopicsList from "./components/TopicsList";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <TopicsList />
-
     </>
   );
 }
+
+export default Home
