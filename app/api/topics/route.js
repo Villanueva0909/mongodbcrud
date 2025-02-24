@@ -8,3 +8,16 @@ export async function POST(request) {
     await Topic.create({ title, description })
     return NextResponse.json({ message: "Topic created" }, { status: 201 })
 }
+
+export async function GET() {
+    await connectMongoDB()
+    const topics = await Topic.find()
+    return NextResponse.json({ topics })
+}
+
+export async function DELETE(request) {
+    const id = request.nextUrl.nextParams.get("id")
+    await connectMongoDB()
+    await Topic.findByIdAndDelete(id)
+
+}
