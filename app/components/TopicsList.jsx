@@ -5,7 +5,7 @@ import { cache } from "react";
 
 const getTopics = async () => {
     try {
-        const res = await fetch('http://localhost:3001/api/topics', {
+        const res = await fetch('http://localhost:3000/api/topics' || 'http://localhost:3001/api/topics', {
             cache: "no-store"
         })
 
