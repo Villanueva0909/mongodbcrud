@@ -16,7 +16,7 @@ const addTopic = () => {
             alert("Title and descsription are required")
 
             try {
-                const res = await fetch('http://localhost:3000/api/topics',
+                const res = await fetch('http://localhost:3000/api/topics' || 'http://localhost:3001/api/topics',
                     {
                         method: "POST",
                         headers: {
