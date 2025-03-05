@@ -50,7 +50,6 @@ const addTopic = () => {
                 <button type="submit" className="bg-red-600 font-bold text-white py-3 px-6 w-fit rounded-lg">Add Topic</button>
             </form>
         </>
-
     )
 }
 
