@@ -2,10 +2,10 @@ import { FaRegTrashAlt } from "react-icons/fa";
 
 const RemoveBtn = (id) => {
 
-    const removeTopic = async () = {
+    const removeTopic = async() = {
         const confirmed = confirm("Are you sure?")
 
-        if (confirmed) {
+        if(confirmed) {
             await fetch('http')
         }
     }
