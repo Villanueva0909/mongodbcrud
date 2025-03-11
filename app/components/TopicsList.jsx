@@ -5,7 +5,7 @@ import { cache } from "react";
 
 const getTopics = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/topics' || 'http://localhost:3001/api/topics', {
+        const res = await fetch('http://localhost:3000/api/topics', {
             cache: "no-store"
         })
 
@@ -33,7 +33,7 @@ const TopicsList = async () => {
                     </div>
                     <div className="flex gap-2">
                         <RemoveBtn id={t._id} />
-                        <Link href={'/editTopic/${t._id}'}>
+                        <Link href={`/editTopic/${t._id}`}>
                             <HiPencilSquare size={24} />
                         </Link>
                     </div>

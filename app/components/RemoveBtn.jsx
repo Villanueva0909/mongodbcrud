@@ -1,14 +1,23 @@
+"use client"
+
+import { useRouter } from "next/navigation";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-const RemoveBtn = (id) => {
+const RemoveBtn = ({ id }) => {
 
-    const removeTopic = async() = {
-        const confirmed = confirm("Are you sure?")
+    const removeTopic = async () => {
+        const router = useRouter()
+        const confirmed = confirm("Are you sure?");
 
-        if(confirmed) {
-            await fetch(`http://localhost:3000/api/topics?id=${id}` || `http://localhost:3001/api/topics?id=${id}`, {
+        if (confirmed) {
+            const res = await fetch(`http://localhost:3000/api/topics?id=${id}`, {
                 method: "DELETE"
             })
+
+            if (res.ok) {
+                router.refresh()
+            }
+
         }
     }
 
