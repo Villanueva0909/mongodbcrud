@@ -1,12 +1,11 @@
 "use client"
 
-import { useRouter } from "next/navigation";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const RemoveBtn = ({ id }) => {
-
+    const router = useRouter()
     const removeTopic = async () => {
-        const router = useRouter()
         const confirmed = confirm("Are you sure?");
 
         if (confirmed) {
